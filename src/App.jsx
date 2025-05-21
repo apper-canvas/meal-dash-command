@@ -35,7 +35,7 @@ function App() {
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M21.9 9.6c-.2-.5-.8-.7-1.3-.5l-2.9 1.4-2.1-5.1c-.2-.5-.8-.7-1.3-.5l-1.9.8c-.5.2-.7.8-.5 1.3l2.1 5.1-2.9 1.4c-.5.2-.7.8-.5 1.3l.8 1.9c.2.5.8.7 1.3.5l2.9-1.4 2.1 5.1c.2.5.8.7 1.3.5l1.9-.8c.5-.2.7-.8.5-1.3l-2.1-5.1 2.9-1.4c.5-.2.7-.8.5-1.3l-.8-1.9zM8.1 10.5l1.4-2.8c.2-.5 0-1.1-.5-1.3L7.1 5.6c-.5-.2-1.1 0-1.3.5L4.4 9l-2.8 1.4c-.5.2-.7.8-.5 1.3l.8 1.9c.2.5.8.7 1.3.5L6 12.6l1.4 2.8c.2.5.8.7 1.3.5l1.9-.8c.5-.2.7-.8.5-1.3l-.8-1.9c-.2-.5-.8-.7-1.3-.5l-1.9.1z"/>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.3 14.5L12 13.4l-4.3 3.1 1.6-5-4.2-3.1 5.2-.4L12 3.1l1.7 4.9 5.2.4-4.2 3.1 1.6 5z"/>
             </svg>
             <h1 className="text-xl font-bold text-surface-900 dark:text-white">Feedo</h1>
           </div>
