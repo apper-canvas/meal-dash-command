@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
-import { getIcon } from '../utils/appUtils';
+import { getIcon } from '../utils/iconUtils';
 import MainFeature from '../components/MainFeature';
 
 // Import icons using our utility
