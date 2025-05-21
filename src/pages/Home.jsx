@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
-import { getIcon } from '../utils/iconUtils';
+import { getIcon } from '../utils/appUtils';
 import MainFeature from '../components/MainFeature';
 
 // Import icons using our utility
@@ -25,7 +25,7 @@ const Home = () => {
       id: 'r1',
       name: 'Spice Garden',
       cuisineType: ['Indian', 'Curry'],
-      priceRange: '$$',
+      priceRange: '₹₹',
       rating: 4.5,
       deliveryTime: 30,
       imageUrl: 'https://source.unsplash.com/WOxddhzhC1w/600x400',
@@ -35,7 +35,7 @@ const Home = () => {
       id: 'r2',
       name: 'Burger Junction',
       cuisineType: ['American', 'Fast Food'],
-      priceRange: '$',
+      priceRange: '₹',
       rating: 4.2,
       deliveryTime: 25,
       imageUrl: 'https://source.unsplash.com/MQUqbmszGGM/600x400',
@@ -45,7 +45,7 @@ const Home = () => {
       id: 'r3',
       name: 'Sushi Master',
       cuisineType: ['Japanese', 'Sushi'],
-      priceRange: '$$$',
+      priceRange: '₹₹₹',
       rating: 4.7,
       deliveryTime: 40,
       imageUrl: 'https://source.unsplash.com/9_MMSwkwP_M/600x400',
@@ -55,7 +55,7 @@ const Home = () => {
       id: 'r4',
       name: 'Pizza Palace',
       cuisineType: ['Italian', 'Pizza'],
-      priceRange: '$$',
+      priceRange: '₹₹',
       rating: 4.0,
       deliveryTime: 35,
       imageUrl: 'https://source.unsplash.com/MQUqbmszGGM/600x400',
@@ -65,7 +65,7 @@ const Home = () => {
       id: 'r5',
       name: 'Taco Fiesta',
       cuisineType: ['Mexican', 'Tacos'],
-      priceRange: '$$',
+      priceRange: '₹₹',
       rating: 4.3,
       deliveryTime: 30,
       imageUrl: 'https://source.unsplash.com/IGfIGP5ONV0/600x400',
@@ -75,7 +75,7 @@ const Home = () => {
       id: 'r6',
       name: 'Noodle House',
       cuisineType: ['Chinese', 'Noodles'],
-      priceRange: '$',
+      priceRange: '₹',
       rating: 4.1,
       deliveryTime: 25,
       imageUrl: 'https://source.unsplash.com/kcA-c3f_3FE/600x400',

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'react-toastify';
-import { getIcon } from '../utils/iconUtils';
+import { getIcon, formatCurrency } from '../utils/appUtils';
 
 // Import icons using our utility
 const ShoppingCartIcon = getIcon('shopping-cart');
@@ -183,7 +183,7 @@ const MainFeature = () => {
                 
                 <div className="flex justify-between items-start mb-1">
                   <h3 className="text-lg font-semibold text-surface-800 dark:text-white">{item.name}</h3>
-                  <span className="font-semibold text-primary">${item.price.toFixed(2)}</span>
+                  <span className="font-semibold text-primary">{formatCurrency(item.price)}</span>
                 </div>
                 
                 <p className="text-sm text-surface-600 dark:text-surface-400 mb-3 line-clamp-2">
@@ -311,7 +311,7 @@ const MainFeature = () => {
                                   </div>
                                   
                                   <span className="font-medium text-surface-800 dark:text-white">
-                                    ${(item.price * item.quantity).toFixed(2)}
+                                    {formatCurrency(item.price * item.quantity)}
                                   </span>
                                 </div>
                               </div>
@@ -342,16 +342,16 @@ const MainFeature = () => {
                         <div className="flex justify-between mb-4">
                           <span className="text-surface-600 dark:text-surface-400">Subtotal</span>
                           <span className="font-medium text-surface-800 dark:text-white">
-                            ${cartTotal.toFixed(2)}
+                            {formatCurrency(cartTotal)}
                           </span>
                         </div>
                         <div className="flex justify-between mb-4">
                           <span className="text-surface-600 dark:text-surface-400">Delivery Fee</span>
-                          <span className="font-medium text-surface-800 dark:text-white">$2.99</span>
+                          <span className="font-medium text-surface-800 dark:text-white">{formatCurrency(2.99)}</span>
                         </div>
                         <div className="flex justify-between mb-4 text-lg font-semibold">
                           <span className="text-surface-800 dark:text-white">Total</span>
-                          <span className="text-primary">${(cartTotal + 2.99).toFixed(2)}</span>
+                          <span className="text-primary">{formatCurrency(cartTotal + 2.99)}</span>
                         </div>
                         
                         <button
@@ -448,7 +448,7 @@ const MainFeature = () => {
                                 {item.quantity} x {item.name}
                               </span>
                               <span className="text-surface-800 dark:text-white">
-                                ${(item.price * item.quantity).toFixed(2)}
+                                {formatCurrency(item.price * item.quantity)}
                               </span>
                             </div>
                           ))}
@@ -457,15 +457,15 @@ const MainFeature = () => {
                         <div className="border-t border-surface-200 dark:border-surface-700 pt-3 mt-3">
                           <div className="flex justify-between mb-1">
                             <span className="text-surface-600 dark:text-surface-400">Subtotal</span>
-                            <span className="text-surface-800 dark:text-white">${cartTotal.toFixed(2)}</span>
+                            <span className="text-surface-800 dark:text-white">{formatCurrency(cartTotal)}</span>
                           </div>
                           <div className="flex justify-between mb-1">
                             <span className="text-surface-600 dark:text-surface-400">Delivery Fee</span>
-                            <span className="text-surface-800 dark:text-white">$2.99</span>
+                            <span className="text-surface-800 dark:text-white">{formatCurrency(2.99)}</span>
                           </div>
                           <div className="flex justify-between font-medium">
                             <span className="text-surface-800 dark:text-white">Total</span>
-                            <span className="text-primary">${(cartTotal + 2.99).toFixed(2)}</span>
+                            <span className="text-primary">{formatCurrency(cartTotal + 2.99)}</span>
                           </div>
                         </div>
                       </div>

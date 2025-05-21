@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { getIcon } from './utils/iconUtils';
+import { getIcon } from './utils/appUtils';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 
