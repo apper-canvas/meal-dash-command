@@ -37,7 +37,7 @@ function App() {
             <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
               <path d="M21.9 9.6c-.2-.5-.8-.7-1.3-.5l-2.9 1.4-2.1-5.1c-.2-.5-.8-.7-1.3-.5l-1.9.8c-.5.2-.7.8-.5 1.3l2.1 5.1-2.9 1.4c-.5.2-.7.8-.5 1.3l.8 1.9c.2.5.8.7 1.3.5l2.9-1.4 2.1 5.1c.2.5.8.7 1.3.5l1.9-.8c.5-.2.7-.8.5-1.3l-2.1-5.1 2.9-1.4c.5-.2.7-.8.5-1.3l-.8-1.9zM8.1 10.5l1.4-2.8c.2-.5 0-1.1-.5-1.3L7.1 5.6c-.5-.2-1.1 0-1.3.5L4.4 9l-2.8 1.4c-.5.2-.7.8-.5 1.3l.8 1.9c.2.5.8.7 1.3.5L6 12.6l1.4 2.8c.2.5.8.7 1.3.5l1.9-.8c.5-.2.7-.8.5-1.3l-.8-1.9c-.2-.5-.8-.7-1.3-.5l-1.9.1z"/>
             </svg>
-            <h1 className="text-xl font-bold text-surface-900 dark:text-white">MealDash</h1>
+            <h1 className="text-xl font-bold text-surface-900 dark:text-white">Feedo</h1>
           </div>
           
           <button 
@@ -64,7 +64,7 @@ function App() {
       <footer className="bg-white dark:bg-surface-800 py-6 mt-12">
         <div className="container mx-auto px-4">
           <div className="text-center text-surface-500 dark:text-surface-400 text-sm">
-            © {new Date().getFullYear()} MealDash. All rights reserved.
+            © {new Date().getFullYear()} Feedo. All rights reserved.
           </div>
         </div>
       </footer>
