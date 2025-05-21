@@ -10,11 +10,15 @@ const MinusIcon = getIcon('minus');
 const TrashIcon = getIcon('trash-2');
 const XIcon = getIcon('x');
 const CreditCardIcon = getIcon('credit-card');
+const TruckIcon = getIcon('truck');
+const UtensilsIcon = getIcon('utensils');
+const ShoppingBagIcon = getIcon('shopping-bag');
 const ChevronRightIcon = getIcon('chevron-right');
 
 const MainFeature = () => {
   // Cart state
   const [cart, setCart] = useState([]);
+  const [serviceType, setServiceType] = useState('delivery'); // delivery, dineIn, takeAway
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   
@@ -383,15 +387,77 @@ const MainFeature = () => {
                     <form onSubmit={handleCheckout}>
                       <div className="mb-4">
                         <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">
-                          Delivery Address
+                          Service Type
                         </label>
-                        <input
-                          type="text"
-                          className="input"
-                          placeholder="Enter your full address"
-                          required
+                        <div className="border border-surface-200 dark:border-surface-700 rounded-lg divide-y divide-surface-200 dark:divide-surface-700">
+                          <label className={`flex items-center p-3 cursor-pointer ${serviceType === 'delivery' ? 'bg-primary/5' : 'hover:bg-surface-50 dark:hover:bg-surface-800'}`}>
+                            <input 
+                              type="radio" 
+                              name="serviceType" 
+                              value="delivery" 
+                              className="mr-3"
+                              checked={serviceType === 'delivery'}
+                              onChange={() => setServiceType('delivery')}
+                            />
+                            <TruckIcon className="w-5 h-5 mr-2 text-surface-600 dark:text-surface-400" />
+                            <span className="text-surface-800 dark:text-white">Food Delivery</span>
+                          </label>
+                          
+                          <label className={`flex items-center p-3 cursor-pointer ${serviceType === 'takeAway' ? 'bg-primary/5' : 'hover:bg-surface-50 dark:hover:bg-surface-800'}`}>
+                            <input 
+                              type="radio" 
+                              name="serviceType" 
+                              value="takeAway"
+                              className="mr-3"
+                              checked={serviceType === 'takeAway'}
+                              onChange={() => setServiceType('takeAway')}
+                            />
+                            <ShoppingBagIcon className="w-5 h-5 mr-2 text-surface-600 dark:text-surface-400" />
+                            <span className="text-surface-800 dark:text-white">Take Away</span>
+                          </label>
+                          
+                          <label className={`flex items-center p-3 cursor-pointer ${serviceType === 'dineIn' ? 'bg-primary/5' : 'hover:bg-surface-50 dark:hover:bg-surface-800'}`}>
+                            <input 
+                              type="radio" 
+                              name="serviceType" 
+                              value="dineIn"
+                              className="mr-3" 
+                              checked={serviceType === 'dineIn'}
+                              onChange={() => setServiceType('dineIn')}
+                            />
+                            <UtensilsIcon className="w-5 h-5 mr-2 text-surface-600 dark:text-surface-400" />
+                            <span className="text-surface-800 dark:text-white">Dine In</span>
+                          </label>
+                        </div>
+                      </div>
+                      
+                      {serviceType === 'delivery' && (
+                        <div className="mb-4">
+                          <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">
+                            Delivery Address
+                          </label>
+                          <input
+                            type="text"
+                            className="input"
+                            placeholder="Enter your full address"
+                            required
+                          />
+                        </div>
+                      )}
+                      
+                      {serviceType === 'dineIn' && (
+                        <div className="mb-4">
+                          <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">
+                            Table Number
+                          </label>
+                          <input
+                            type="text"
+                            className="input"
+                            placeholder="Enter your table number"
+                            required
                         />
                       </div>
+                      )}
                       
                       <div className="mb-4">
                         <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">
@@ -460,7 +526,15 @@ const MainFeature = () => {
                             <span className="text-surface-800 dark:text-white">{formatCurrency(cartTotal)}</span>
                           </div>
                           <div className="flex justify-between mb-1">
-                            <span className="text-surface-600 dark:text-surface-400">Delivery Fee</span>
+                            <span className="text-surface-600 dark:text-surface-400">
+                              {serviceType === 'delivery' && 'Delivery Fee'}
+                              {serviceType === 'takeAway' && 'Packaging Fee'}
+                              {serviceType === 'dineIn' && 'Service Fee'}
+                            </span>
+                            <span className="text-surface-800 dark:text-white">{formatCurrency(2.99)}</span>
+                          </div>
+                          <div className="flex justify-between mb-1">
+                            <span className="text-surface-600 dark:text-surface-400">Service Type</span>
                             <span className="text-surface-800 dark:text-white">{formatCurrency(2.99)}</span>
                           </div>
                           <div className="flex justify-between font-medium">
